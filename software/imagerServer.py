@@ -1,8 +1,9 @@
 import threading 
 import cv2
 import functions as fun
+import socket
 
-HOST = "127.0.0.1"
+HOST = socket.gethostbyname(socket.gethostname())
 commandPort = 5000
 videoPort = 5100
 
