@@ -1,7 +1,7 @@
 # Code
 LabVIEW code to operate Optris thermal cameras.
 
-The software development kit (SDK) must be installed for the code to function. The installer can be found in [here](SDK/otcsdk-11.3.0-amd64.exe). 
+The software development kit (SDK) must be installed for the code to function.
 
 Implementation of camera preview footage in LabVIEW is in progress. There is no preview. 
 
