@@ -14,4 +14,4 @@ A Python script that converts `.npz` thermal data files into viewable video foot
 ### Output
 
 - **Video file** — watchable footage generated from the `.npz` data
-- **CSV file** — thermal data extracted from the frame with the highest recorded pixel value
+- **CSV file** — frame with the highest recorded pixel value

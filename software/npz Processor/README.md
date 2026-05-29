@@ -1,5 +1,6 @@
 # npz Processing
 
-Code to process npz files into watchable footage. It also produces a CSV file containing thermal data of a frame with the highest pixel value. 
+This utility converts recorded thermal `.npz` files into viewable video footage and exports thermal data for further analysis.
 
 To use, Run npzProcessing.py file.
+
