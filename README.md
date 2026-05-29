@@ -1,5 +1,9 @@
-# Dataset-battery-tab-laser-welding
-Dataset on battery tab laser welding with in situ monitoring 
+# LabVIEW-code-for-Recording-Optris-Xi-videos
+LabVIEW code to operate Optris thermal cameras.
+
+The software development kit (SDK) must be installed for the code to function. The installer can be found in (LabVIEW-code-for-Recording-Optris-Xi-videos\software\SDK\otcsdk-11.3.0-amd64.exe). 
+
+Implementation of camera preview footage in LabVIEW, so for now, you will have to rely on Python's preview. 
 
 
 ## Licensing and Citation
@@ -11,12 +15,12 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
 
 Cite this as: 
 
-@Misc{ARTSLabArtsLaboratory/datasetBattery,    
+@Misc{ARTSLabArtsLaboratory/optrisCode,    
   author = {ARTS-Lab},  
   howpublished = {GitHub},  
-  title  = {ARTS-Laboratory/Dataset-battery-tab-laser-welding},    
+  title  = {ARTS-Laboratory/LabVIEW-code-for-Recording-Optris-Xi-videos},    
   groups = {ARTS-Lab},    
-  url    = {https://github.com/ARTS-Laboratory/ARTS-Laboratory/Dataset-battery-tab-laser-welding},   
+  url    = {https://github.com/ARTS-Laboratory/LabVIEW-code-for-Recording-Optris-Xi-videos.git},   
   note  = {Accessed: Month dd, yyyy},   
 }
 
