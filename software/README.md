@@ -1,12 +1,17 @@
 # Software
 
 ## Record
-LabVIEW code to operate Optris thermal cameras.
+LabVIEW code for interfacing with Optris thermal cameras.
 
 The software development kit (SDK) must be installed for the code to function.
 
-Implementation of camera preview footage in LabVIEW is in progress. There is no preview. 
+> **Note:** Live camera preview is not yet available in LabVIEW.
 
-## npz Processing
-Code to process npz files into watchable footage. It also produces a CSV file containing thermal data of a frame with the highest pixel value. 
+## NPZ File Processor
 
+A Python script that converts `.npz` thermal data files into viewable video footage and extracts key thermal metrics.
+
+### Output
+
+- **Video file** — watchable footage generated from the `.npz` data
+- **CSV file** — thermal data extracted from the frame with the highest recorded pixel value
