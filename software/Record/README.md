@@ -7,3 +7,5 @@ Implementation of camera preview footage in LabVIEW is in progress. There is no 
 
 To use, ensure the server path is set to imagerserver.py and run the VI, wait for the terminal to say that the thermal data is now reliable. Finally, click "connect client" to enable recording features.
 
+
+

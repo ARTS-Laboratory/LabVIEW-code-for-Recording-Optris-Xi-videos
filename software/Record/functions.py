@@ -131,48 +131,26 @@ class CameraClient(otc.IRImagerClient):
             "size_bytes": h * w * 3
         }
 
-def seePreview(client, imager, stopFeed, HOST, videoPort):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
-        server.bind((HOST, videoPort))
-        server.listen(1)
-        print(f"       [SocketServer] Listening on {HOST}:{videoPort}")
+def seePreview(client, imager, stopFeed):
+    imager.runAsync()
+    while stopFeed.is_set: 
+        image = client.getImage()
+
+        if image is not None:
+            if client.recording:
+                n = len(client.recorded_frames)
+                cv2.circle(image, (12, 12), 8, (0, 0, 220), -1)
+                cv2.putText(image, f"REC {n}", (24, 17),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 220), 1, cv2.LINE_AA)
+
+            cv2.imshow('Thermal Camera ("q" to quit)', image)
         
-        imager.runAsync()
+        key = cv2.waitKey(1) & 0xFF
 
-        cv2.namedWindow('Thermal Camera')
-        cv2.createTrackbar(
-        'Focus', 'Thermal Camera',
-        int(imager.getFocusMotorPosition()), 100,
-        lambda x: imager.setFocusMotorPosition(x)
-        )
-
-        VideoConnect = None
-
-        while not stopFeed.is_set(): 
-            if VideoConnect is None:
-                try:
-                    VideoConnect, address = server.accept()
-                    print(f"       [VideoServer] Client connected: {address}")
-                except socket.timeout:
-                    pass
-
-            image = client.getImage()
-
-            
-
-            if image is not None:
-                placeRecSymbol(image, client)
-                cv2.imshow('Thermal Camera ("q" to quit)', image)
-            
-            info = client.getImageInfo()
-
-            key = cv2.waitKey(1) & 0xFF
-
-            if key == ord('q') or stopFeed.is_set():
-                if client.recording:
-                    client.stop_recording()
-                break
-
+        if key == ord('q') or stopFeed.is_set():
+            if client.recording:
+                client.stop_recording()
+            break
 
 def runSocketServer(client, HOST, PORT, stopFeed, imager):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:

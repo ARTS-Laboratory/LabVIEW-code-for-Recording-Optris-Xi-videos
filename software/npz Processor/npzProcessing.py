@@ -1,11 +1,14 @@
 import functionFIles as bruh
 from pytictoc import TicToc
+from pathlib import Path
 
 bruh.clear_terminal()
 
-inputPath = r"C:\Users\mayhe\OneDrive\Documents\GitHub\In-situ-monitoring-of-powder-bed-fusion-additive-manufacturing\system_development\Damascus\V0.4\software development\Recordings"
-outputPath = r"C:\Users\mayhe\OneDrive\Documents\GitHub\Dataset-battery-tab-laser-welding\data\Dataset-2\Processed Data\Footage"
-outputPathCSV = r"C:\Users\mayhe\OneDrive\Documents\GitHub\Dataset-battery-tab-laser-welding\data\Dataset-2\Processed Data\Thermal Radiation CSV"
+BASE_DIR = Path(__file__).resolve().parent
+
+inputPath = BASE_DIR.parent / "Record" / "Recordings"
+outputPath = BASE_DIR / "Videos"
+outputPathCSV = BASE_DIR / "CSV"
 
 fileNames = bruh.gimmeFileNames(inputPath)
 filePaths = bruh.buildFilePaths(inputPath)

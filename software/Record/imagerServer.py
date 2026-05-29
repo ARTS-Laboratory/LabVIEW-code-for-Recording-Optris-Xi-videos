@@ -21,7 +21,7 @@ socketThread = threading.Thread(
 
 socketThread.start()
 
-fun.seePreview(client, imager, stopFeed, HOST, videoPort)
+fun.seePreview(client, imager, stopFeed)
 
 cv2.destroyAllWindows()
 imager.stopRunning()
