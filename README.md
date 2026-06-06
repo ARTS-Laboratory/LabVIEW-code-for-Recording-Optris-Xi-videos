@@ -22,10 +22,3 @@ Cite this as:
   url    = {https://github.com/ARTS-Laboratory/LabVIEW-code-for-Recording-Optris-Xi-videos.git},   
   note  = {Accessed: Month dd, yyyy},   
 }
-
-<p align="center">
-<img src="media/QR-code.png" alt="drawing" width="200"/>
-</p>
-<p align="center">
-QR code for repo.
-</p>
