@@ -33,11 +33,9 @@ The following Python packages are required:
 ## Usage
 
 1. Open `thermalCamera.vi`.
-2. Verify that the server path points to `imagerServer.py`.
-3. Run the VI.
-4. Wait for the terminal to indicate that camera calibration has completed and temperature measurements are reliable.
-5. Click **Connect Client**.
-6. Press **Record** to begin recording thermal data.
+2. Run the VI.
+3. Wait for the terminal to indicate that camera calibration has completed and temperature measurements are reliable.
+4. Press **Record** to begin recording thermal data.
 
 ## Recording Format
 
