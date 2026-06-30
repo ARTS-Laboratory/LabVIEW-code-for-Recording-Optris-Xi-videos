@@ -11,6 +11,7 @@ import struct
 
 BASE_DIR = Path(__file__).resolve().parent
 outputPath = BASE_DIR / "Recordings"
+os.makedirs(outputPath, exist_ok=True)
 
 def clear_terminal():
     if os.name == 'nt':
@@ -82,6 +83,7 @@ class CameraClient(otc.IRImagerClient):
         fileCount = len([f for f in save_dir.iterdir() if f.is_file()])
         ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         path = os.path.join(save_dir, f"thermalRun{fileCount}_{ts}.npz")
+        
         
         stack = np.stack(self.recorded_frames, axis=0)
         np.savez_compressed(
